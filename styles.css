@@ -864,3 +864,26 @@
         display: block; /* Mobile screen par nazar aayega */
     }
 }
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Header ke neechay aane ke liye */
+        left: 0;
+        background-color: #121212; /* Apne theme ke mutabiq background */
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    /* Jab JavaScript se menu active ho toh yeh show ho */
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    /* Hero section ya content ka overflow fix karne ke liye */
+    body {
+        overflow-x: hidden;
+    }
+}
