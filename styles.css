@@ -819,71 +819,53 @@
   margin: 0;
   line-height: 1.4;
 }
-/* Mobile Menu Toggle Button Styles */
+/* --- Mobile Navbar & Toggle Fix --- */
 .nav-toggle {
-    display: none; /* Desktop par hide rahega */
-    background: transparent;
+    display: none;
+    background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 999;
 }
 
-.hamburger,
-.hamburger::before,
-.hamburger::after {
+.nav-toggle .bar {
     display: block;
-    width: 25px;
+    width: 100%;
     height: 3px;
-    background: var(--gold-bright, #caca82); /* Aapke theme ke mutabiq gold color */
-    position: relative;
-    transition: transform 0.3s ease;
+    background-color: var(--gold-bright, #caca82);
+    border-radius: 2px;
 }
 
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    left: 0;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    bottom: -8px;
-}
-
-/* Mobile Media Query (Jab screen choti ho) */
-@media (max-width: 768px) {
+/* Mobile Media Query */
+@media screen and (max-width: 768px) {
     .nav-toggle {
-        display: block; /* Mobile screen par nazar aayega */
+        display: flex !important;
     }
-}
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
+
+    .links {
+        display: none !important;
         flex-direction: column;
-        width: 100%;
         position: absolute;
-        top: 70px; /* Header ke neechay aane ke liye */
+        top: 70px;
         left: 0;
-        background-color: #121212; /* Apne theme ke mutabiq background */
+        width: 100%;
+        background-color: #121212;
         padding: 20px 0;
         text-align: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        z-index: 998;
     }
 
-    /* Jab JavaScript se menu active ho toh yeh show ho */
-    .nav-links.nav-active {
-        display: flex;
+    .links.active {
+        display: flex !important;
     }
 
-    /* Hero section ya content ka overflow fix karne ke liye */
-    body {
-        overflow-x: hidden;
+    .links a {
+        margin: 10px 0;
+        color: #fff;
     }
 }
