@@ -819,3 +819,48 @@
   margin: 0;
   line-height: 1.4;
 }
+/* Mobile Menu Toggle Button Styles */
+.nav-toggle {
+    display: none; /* Desktop par hide rahega */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--gold-bright, #caca82); /* Aapke theme ke mutabiq gold color */
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+/* Mobile Media Query (Jab screen choti ho) */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Mobile screen par nazar aayega */
+    }
+}
